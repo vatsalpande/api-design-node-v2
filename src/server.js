@@ -4,6 +4,14 @@ import { restRouter } from './api'
 import { connect } from './db'
 import { signin, protect } from './api/modules/auth'
 // Declare an app from express
-const app = null
+const app = express();
+app.get('/hello',(req, res) =>{
+    res.json({hello:true})
+} )
+app.all('*',(req, res) =>{
+    res.json({ok:true})
+} )
+
+
 
 export default app
